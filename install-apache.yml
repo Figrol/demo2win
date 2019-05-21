@@ -6,3 +6,30 @@
       yum:
         name: httpd
         state: latest
+        
+    - name: Insall Firewall
+      yum:
+        name: firewalld
+        state: latest
+        
+    - name: Open firewall ports
+      firewalld:
+        service: http
+        permanent: yes
+        immediate: yes
+        state: enabled
+        
+    - name: Upload index.html file
+      copy: 
+        content: <html><head><title>Welcome to our awesome website</title></head><h1>Welcome to this awesome website!</h1><body>This is the coolest website on the planet at the moment, look at that adorable cat!<br><br><img src="https://www.doozylist.com/wp-content/uploads/2017/09/34-Adorable-Cats-and-Kittens-2.jpg" width="20%" /><br><br>And this good boy!<br><br><img src="http://i.imgur.com/HIbDRZb.png" width="20%" /></html>
+        dest: /var/www/html/index.html
+        
+    - name: restart apache
+      service:
+        name: httpd
+        state: restarted
+        
+    - name: restart firewalld
+      service:
+        name: firwalld
+        state: restarted
