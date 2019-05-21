@@ -2,7 +2,7 @@
 - name: Install Apache web server
   hosts: all
   tasks:
-    - name: Install apache
+    - name: Install apache and firewalld
       yum:
         name:
           - httpd
