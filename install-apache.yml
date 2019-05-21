@@ -6,7 +6,7 @@
       yum:
         name:
           - httpd
-          -firewalld
+          - firewalld
         state: latest
         
     - name: Start firewall
