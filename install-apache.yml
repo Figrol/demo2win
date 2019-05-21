@@ -1,0 +1,8 @@
+---
+- name: Install Apache web server
+  hosts: all
+  tasks:
+    - name: Install apache
+      yum:
+        name: httpd
+        state: latest
