@@ -13,3 +13,10 @@
       file:
         dest: /var/www/html/index.html
         state: absent
+        
+    - name: Open firewall ports
+      firewalld:
+        service: http
+        permanent: yes
+        immediate: yes
+        state: disbaled
