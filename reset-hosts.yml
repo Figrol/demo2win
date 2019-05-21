@@ -14,7 +14,7 @@
         dest: /var/www/html/index.html
         state: absent
         
-    - name: Open firewall ports
+    - name: Close firewall ports
       firewalld:
         service: http
         permanent: yes
