@@ -4,12 +4,9 @@
   tasks:
     - name: Install apache
       yum:
-        name: httpd
-        state: latest
-        
-    - name: Insall Firewall
-      yum:
-        name: firewalld
+        name:
+          - httpd
+          -firewalld
         state: latest
         
     - name: Start firewall
