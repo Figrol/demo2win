@@ -9,11 +9,7 @@
           - firewalld
         state: latest
         
-    - name: Start firewall
-      service:
-        name: firewalld
-        enabled: yes
-        state: started
+
 
 
     - name: Open firewall ports
